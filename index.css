@@ -1,0 +1,586 @@
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Lato:wght@700&display=swap');
+/* reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body{
+    display: grid;
+    background-color: rgb(6, 34, 54);
+    /* background-image: url(/img/1080px-12col-79w-12gut.png); */
+    width: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: contain;    
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* navbar y logo*/
+
+.logo {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-right: 75px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    width: 100%;
+    transition: 0.5s;
+    background: linear-gradient(hsl(0 0% 0% /3), hsl(20 0% 0% / 10)20%, hsl(0 0% 0% / 1));
+    z-index: 1;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-right: 73px;
+
+}
+
+.nav-links li {
+    margin: 0 30px;
+
+}
+
+/* header */
+header {
+    background-image: url(/img/home.png);
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+.textos-header{
+    justify-content: center;
+    margin-top:286px;
+    margin-right: 341px;
+    color:white;
+}
+.header-content h2 {
+    font-size: 7vmin;
+    font-family: 'bodini',sans-serif;
+}
+
+.header-content h1 {
+    font-size: 3vmin;
+    font-family: 'lato-bold', sans-serif;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+/* seccion cards y titulo  */
+.title{
+    text-align: center;
+    font-size: 64px;
+    font-family: 'bodini', sans-serif;
+    color: rgb(225, 221, 156);
+}
+/* cards */
+
+.card {
+    display: inline-flex;
+    flex-wrap: wrap;
+    color: white;
+    background-size: cover;
+    width: 250px;
+    height: 35ch;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 60px;
+    transition: transform 500ms ease;
+    position: relative;
+    margin-right: -20px;
+    margin-left: 150px;
+   
+}
+/* imagenes cards */
+#card-1{
+    background-image:url(/img/Cards/Accidente-de-trabajo.png) ;
+}
+#card-2{
+    background-image: url(/img/Cards/Accidente-In-Itinere.png);
+}
+#card-3{
+    background-image: url(/img/Cards/Enfermedades-profesionales.png);
+}
+#card-4{
+    background-image: url(/img/Cards/despidos.png);
+}
+#card-5{
+    background-image: url(/img/Cards/accidente-de-trafico.png);
+}
+#card-6{
+    background-image: url(/img/Cards/divorcio.png);
+}
+#card-7{
+    background-image: url(/img/Cards/cuota-alimenticia.png);
+}
+#card-8{
+    background-image: url(/img/Cards/sucesiones.png);
+}
+#card-9{
+    background-image: url(/img/Cards/derecho-penal.png);
+}
+#card-10{
+    background-image: url(/img/Cards/jubilados-y-pensionados.png);
+    
+}
+#card-11{
+    background-image: url(/img/Cards/derecho-administrativo.png);
+
+}
+
+.card:hover,
+.card:focus-within {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+    background: linear-gradient(hsl(0 0% 0% /0), hsl(20 0% 0% / 0.3)20%, hsl(0 0% 0% / 1));
+    transform: translateY(65%);
+    transition: transform 500ms ease;
+    transition-delay: 100ms;
+
+}
+
+.card:hover .card-content,
+.card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+}
+.card:focus-within .card-content{
+    transition-duration: 0ms;
+}
+
+.card-content>*:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+.card:hover .card-content >*:not(.card-title),
+.card:focus-within .card-content >*:not(.card-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+}
+
+.card-title {
+    position: relative;
+    width: 120px;
+
+}
+
+.card-title::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background: var(--clr-accent-400);
+    bottom: -2px;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: left;
+}
+
+.card:hover .card-title::after ,
+.card:focus-within .card-title::after{
+    transform: scaleX(1);
+}
+/* carrusel testimonio */
+.img-slider{
+    position: relative;
+    width:100%;
+    top: 10px;
+    height: 550px;
+    margin: 0;
+    display: flex;
+}
+.img-slider .slide{
+    z-index:0;
+    position: absolute;
+    width: 100%;
+}
+.img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
+} 
+.img-slider .slide img{
+    z-index: 0;
+    width: 100%;
+    border-radius: 5px;
+}
+.img-slider .slider .info{
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
+}
+.img-slider .slider .info h2{
+    color: #fff;
+    font-size: 45px;
+    text-transform:uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.img-slider .slider .info p{
+    color: #fff;
+    background: white;
+    font-size: 16px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+}
+.img-slider .navegation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: -180px;
+    left: 49.5%;
+    transform: translateX(-50%);
+}
+.img-slider .navegation .btn{
+    background: yellow;
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.img-slider .navegation .btn.active{
+    background: yellowgreen;
+    box-sizing: 0 0 2px rgba(0, 0, 0, 0.5s);
+}
+/* contenido de testimonio y barra vertical */
+.slides{
+    display:none;
+}
+.active{
+    display: inline;
+}
+.info{
+    position: absolute;
+    top: 130px;
+    left: 40px;
+}
+/* titulo de testimonio */
+.img-slider{
+    background-image: url(/img/testimonio.png);
+}
+.info h2{
+    color: rgb(255, 221, 156);
+    margin-left: 512px;
+    font-size: 30pt;
+    font-family: 'Bodoni Moda', serif;
+}
+/* nombre ej:sucesiones */
+.info h6{
+    color: rgb(225, 221, 156);
+    margin-left: 360px;
+    font-size: 19px;
+    font-weight: 100;
+    margin-top: 145px;
+}
+/* nombre del cliente */
+.info h5{
+    margin-left: 280px;
+    margin-top: 20px;
+    font-size: 40pt;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+/* apellido del cliente */
+.info h4{
+   margin-left: 280px; 
+   font-size: 35pt;
+   font-family: 'Lato', serif;
+   font-weight: bold;
+   color: white;
+}
+/* contenido del testimonio */
+.info p{
+    margin-left: 550px;
+    margin-top: -130px;
+    font-family: 'Lato', serif;
+    font-weight: 31pt;
+    text-align: justify;
+    width: 20%;
+    color: white;
+}
+/* linea vertical  */
+.linea {
+    border-left: 3px solid rgb(225, 221, 156);
+    height: 180px;
+    position: absolute;
+    left: 10%;
+    margin-left: 450px;
+    top:194px;
+}
+/* quienes somos */
+.title-somos{
+    margin-top: 250px; 
+    text-align: center;
+    justify-content: center; 
+    font-family: 'Lato', serif;
+    color: rgb(225, 221, 156);
+    font-size: 26pt;
+    margin-left: -20px;
+}
+.textos-quienes{
+    color: white;
+    margin-top: 30px;
+    margin-left: 220px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 65.5%;
+    font-size: 15pt;
+}
+/* vision */
+.vision{
+    position: relative;
+    top: 50px;
+    left: 400px;
+    color: rgb(225, 221, 156);
+}
+.vision-p{
+    justify-content: justify;
+    text-align: center;
+    width: 430px;
+    margin-left: -180px;
+    color: white;
+}
+/* mision */
+.mision{
+    position: relative;
+    margin-top: -30px;
+    left: 840px;
+    color: rgb(225, 221, 156);
+}
+.mision-p{
+    color: white;
+    text-align: center;
+    margin-left: -180px;
+    width: 430px;
+}
+/* valores */
+
+
+
+/* carrusel preguntas */
+#img-slider1{
+    background-image: url(/img/preguntas-frecuentes.png);
+}
+/* contacto */
+.contact-wrap{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -106px;
+}
+.contact-in{
+    padding: 40px 30px;
+    margin-top: 300px;
+}
+.contact-in:nth-child(1){
+    flex: 30%;
+}
+.contact-in:nth-child(2){
+    flex: 30%;
+}
+.contact-in:nth-child(3){
+    flex: 30%;
+}
+.contact-in h4{
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#wpp{
+    position: relative;
+    top:63px;
+    font-size: 20pt;
+    font-family: 'Lato';
+    color: white;
+}
+#mail{
+    position: relative;
+    top:60px;
+    font-size: 20pt;
+    font-family: 'Lato';
+    color:white;
+}
+#maps-p{
+    position: relative;
+    top: 60px;
+    font-size: 20pt;
+    font-family: 'Lato';
+    color: white;
+}
+.wpp-btn{
+    position: relative;
+    top: 30px;
+    right: 50px;
+    width: 40px;
+    cursor: pointer;
+}
+.mail-btn{
+    position: relative;
+    top: 33px;
+    right: 50px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.ubi-btn{
+    position: relative;
+    top: 30px;
+    right: 50px;
+    width: 40px;
+    cursor: pointer;
+}
+.maps iframe{
+width: 477px;
+height: 268px;
+position: relative;
+left: 600px;
+margin-top: -300px;
+}
+
+
+
+
+
+
+
+
+
+
+/* responsive movil */
+
+@media only screen and (max-width:850px) {
+    .textos-header{
+        margin-left: 177px;
+    }
+    .navbar {
+        padding: 0;
+        display: block;
+        transition: 0.5s;
+        background: linear-gradient(hsl(0 0% 0% /10), hsl(20 0% 0% / 10)20%, hsl(0 0% 0% / 1));
+        z-index: 1;
+    }
+
+    .logo {
+        position: absolute;
+        top: 19px;
+        left: 30px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background-color: rgb(133, 128, 128);
+        margin-top: -900px;
+        transition: all 0.5s ease;
+    }
+
+    .mobile-menu {
+        margin-top: 0px;
+        border-bottom-left-radius: 10%;
+    }
+
+    .nav-links li {
+        margin: 30px auto;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+    /* carrusel responsive */
+
+@media (hover){
+    .card-content{
+        transform: translateY(65%);
+        transition: transform 500ms ease;
+        transition-delay: 100ms;
+    }
+.card:hover .card-content,
+.card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+}
+.card:focus-within .card-content{
+    transition-duration: 0ms;
+}
+
+.card-content>*:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+.card:hover .card-content >*:not(.card-title),
+.card:focus-within .card-content >*:not(.card-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+}
+ .card-title::after{
+     transform: translateX(0);
+ }
+ .card-body{
+     font-size: 18px;
+ }
+}
+@media(prefers-reduced-motion: reduce){
+        *,
+        *::before,
+        *::after{
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+            transition-delay: 0ms !important;
+        }
+    }
+}
